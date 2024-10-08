@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        * {
+            margin: 0;
+            --scale-factor: 0.25;
+        }
+        @font-face {
+            font-family: 'advpixel'; /*a name to be used later*/
+            src: url('assets/advanced_pixel-7.ttf'); /*URL to font*/
+        }
+        img {
+            position: absolute;
+            width: calc(2000px * var(--scale-factor));
+            height: calc(1200px * var(--scale-factor));
+        }
+        #display {
+            position: absolute;
+            width: calc(725px * var(--scale-factor));
+            height: calc(265px * var(--scale-factor));
+            margin-left: calc(635px * var(--scale-factor));
+            margin-top: calc(230px * var(--scale-factor));
+            /*outline: solid red;*/
+            /*line-height: calc(130px * var(--scale-factor));*/
+            opacity: 1;
+            color: white;
+            font-size: calc(75px * var(--scale-factor));
+            font-family: advpixel, sans-serif;
+        }
+        #knapp {
+            position: absolute;
+            width: calc(255px * var(--scale-factor));
+            height: calc(255px * var(--scale-factor));
+            margin-left: calc(1070px * var(--scale-factor));
+            margin-top: calc(695px * var(--scale-factor));
+            opacity: 0.5;
+            color: white;
+            border-radius: 50%;
+            border: 0;
+        }
+        #hakemerke {
+            width: calc(75px * var(--scale-factor));
+            height: calc(75px * var(--scale-factor));
+        }
+    </style>
+</head>
+<body>
+<img id="boks-bilde" src="assets/background_v2.png" alt="">
+<img id="knapp-bilde" src="assets/button_off.png" alt="">
+<img id="led-bilde" src="assets/LED_green.png" alt="">
+<div id="display">
+    Å nei, alt brenner ned<br>
+    Her er linje to
+</div>
+<button id="knapp" onclick="trykkKnapp()">
+</button>
+</body>
+</html>

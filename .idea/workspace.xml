@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="181b2ec7-b54a-449f-a0db-31f404ec746a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/LED_green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/LED_red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/LED_yellow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/advanced-pixel-7.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/advanced_pixel-7.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/audio/1_advarsel_loop.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/audio/2_alarm_kvittert_loop.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/audio/3_Utlufting bekreftet_Systemet sjekker nå om røyken er borte.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/audio/4_utløpt_tid_loop.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/audio/5_Røyken er borte_Systemet går tilbake til normal funksjon.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/background_v1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/background_v2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button_green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button_off.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button_pressed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button_red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button_yellow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/checkmark.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brannalarm.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2n92IBXJ1KYM5gJk4WZXCAT52bS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="181b2ec7-b54a-449f-a0db-31f404ec746a" name="Changes" comment="" />
+      <created>1728370890888</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1728370890888</updated>
+      <workItem from="1728370891947" duration="5837000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
