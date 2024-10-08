@@ -1,4 +1,4 @@
-const tilstandsdefinisjoner= {
+const tilstander= {
     OK: {
         led: 'green',
         button: 'off',
@@ -57,18 +57,18 @@ let nedtelling;
 let blinkIntervall;
 
 
-function settTilstand(tilstand) {
+function settTilstand(nyTilstand) {
 
-    console.log(`Tilstand endret til ${tilstand} etter ${Date.now() - innlastingstid} ms`);
+    console.log(`Tilstand endret til ${nyTilstand} etter ${Date.now() - innlastingstid} ms`);
 
-    nåværendeTilstand = tilstand;
-    const definisjon = tilstandsdefinisjoner[tilstand];
+    nåværendeTilstand = nyTilstand;
+    const tilstand = tilstander[nyTilstand];
 
     let alternativ = false;
     const byttGrafikk = () => {
         if (!alternativ) {
-            $('#knapp-bilde').attr('src', `assets/button_${definisjon.button}.png`);
-            $('#led-bilde').attr('src', `assets/LED_${definisjon.led}.png`);
+            $('#knapp-bilde').attr('src', `assets/button_${tilstand.button}.png`);
+            $('#led-bilde').attr('src', `assets/LED_${tilstand.led}.png`);
         } else {
             $('#knapp-bilde').attr('src', `assets/button_off.png`);
             $('#led-bilde').attr('src', ``);
@@ -76,27 +76,27 @@ function settTilstand(tilstand) {
         alternativ = !alternativ;
     }
     clearInterval(blinkIntervall);
-    if (definisjon.blinkende) {
+    if (tilstand.blinkende) {
         blinkIntervall = setInterval(byttGrafikk, blinkHastighet);
     }
     byttGrafikk();
-    $('#display').html(definisjon.tekst);
+    $('#display').html(tilstand.tekst);
 
-    $('#tts-lyd').attr('src', `audio/${definisjon.lyd}`);
-    if (definisjon.gjentaLyd)
-        $('#tts-lyd').prop('loop', true);
+    $('#lyd').attr('src', `audio/${tilstand.lyd}`);
+    if (tilstand.gjentaLyd)
+        $('#lyd').prop('loop', true);
     else
-        $('#tts-lyd').removeProp('loop');
-    $('#tts-lyd')[0].play();
+        $('#lyd').removeProp('loop');
+    $('#lyd')[0].play();
 
     clearInterval(nedtelling);
 
-    if (definisjon.nedtelling) {
-        let sekunder = definisjon.nedtelling;
+    if (tilstand.nedtelling) {
+        let sekunder = tilstand.nedtelling;
         const oppdaterDisplay = () => {
             if (sekunder < 0) {
                 clearInterval(nedtelling);
-                settTilstand(definisjon.tilstandEtterNedtelling);
+                settTilstand(tilstand.tilstandEtterNedtelling);
             }
             $('#nedtelling').text(
                 Math.floor(sekunder / 60) + ':' +

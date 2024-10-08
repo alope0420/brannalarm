@@ -54,11 +54,16 @@
 <img id="knapp-bilde" src="assets/button_off.png" alt="">
 <img id="led-bilde" src="assets/LED_green.png" alt="">
 <div id="display"></div>
-<button id="knapp" onclick="trykkKnapp()">
-</button>
+<button id="knapp" onclick="trykkKnapp()"
+        onmousedown="document.getElementById('lyd-knapp-ned').play()"
+        onmouseup="document.getElementById('lyd-knapp-opp').play()"
+></button>
 
-<audio src="" id="tts-lyd" controls>
+<audio src="" id="lyd">
 </audio>
+
+<audio src="audio/button_click.wav" id="lyd-knapp-ned"></audio>
+<audio src="audio/button_release.wav" id="lyd-knapp-opp"></audio>
 
 </body>
 </html>
