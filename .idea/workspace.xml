@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="181b2ec7-b54a-449f-a0db-31f404ec746a" name="Changes" comment="La til lyd og blinkende knapper">
-      <change afterPath="$PROJECT_DIR$/audio/button_click.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/audio/button_release.wav" afterDir="false" />
+    <list default="true" id="181b2ec7-b54a-449f-a0db-31f404ec746a" name="Changes" comment="La til lyd for knappeklikk, endret noen variabelnavn">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
@@ -61,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1728370890888</updated>
-      <workItem from="1728370891947" duration="11619000" />
+      <workItem from="1728370891947" duration="12945000" />
     </task>
     <task id="LOCAL−00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -91,7 +89,14 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1728382161863</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="La til lyd for knappeklikk, endret noen variabelnavn">
+      <option name="closed" value="true" />
+      <created>1728383390895</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1728383390895</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,6 +108,7 @@
     <MESSAGE value="Oppdaterte varighet av nedtelling i henhold til spesifikasjon" />
     <MESSAGE value="Justering av skriftstørrelse, la til overgang til nye tilstander etter tidsavbrudd" />
     <MESSAGE value="La til lyd og blinkende knapper" />
-    <option name="LAST_COMMIT_MESSAGE" value="La til lyd og blinkende knapper" />
+    <MESSAGE value="La til lyd for knappeklikk, endret noen variabelnavn" />
+    <option name="LAST_COMMIT_MESSAGE" value="La til lyd for knappeklikk, endret noen variabelnavn" />
   </component>
 </project>

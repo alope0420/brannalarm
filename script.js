@@ -52,6 +52,7 @@ let nåværendeTilstand = 'OK';
 const utløsAlarmEtter = 5;  // i sekunder
 const blinkHastighet = 750; // i millisekunder
 const innlastingstid = Date.now();
+let forrigeTid = Date.now();
 let nedtelling;
 
 let blinkIntervall;
@@ -59,7 +60,8 @@ let blinkIntervall;
 
 function settTilstand(nyTilstand) {
 
-    console.log(`Tilstand endret til ${nyTilstand} etter ${Date.now() - innlastingstid} ms`);
+    console.log(`Tilstand endret til ${nyTilstand} etter ${Date.now() - forrigeTid} ms fra forrige registrerte tid`);
+    forrigeTid = Date.now();
 
     nåværendeTilstand = nyTilstand;
     const tilstand = tilstander[nyTilstand];
@@ -109,6 +111,7 @@ function settTilstand(nyTilstand) {
 }
 
 function trykkKnapp() {
+    console.log('Nåværende tilstand: ' + nåværendeTilstand + '. Bruker trykket på knappen.');
     switch (nåværendeTilstand) {
         case 'OK': {
             clearTimeout(nedtelling);
