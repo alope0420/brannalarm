@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="181b2ec7-b54a-449f-a0db-31f404ec746a" name="Changes" comment="Oppdaterte varighet av nedtelling i henhold til spesifikasjon">
+    <list default="true" id="181b2ec7-b54a-449f-a0db-31f404ec746a" name="Changes" comment="Justering av skriftstørrelse, la til overgang til nye tilstander etter tidsavbrudd">
+      <change afterPath="$PROJECT_DIR$/audio/5_røyken_er_borte.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/checkmark.gif" beforeDir="false" afterPath="$PROJECT_DIR$/assets/checkmark.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio/5_røyken_er_borte.mp3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
     </list>
@@ -59,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1728370890888</updated>
-      <workItem from="1728370891947" duration="7486000" />
+      <workItem from="1728370891947" duration="10367000" />
     </task>
     <task id="LOCAL−00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -75,7 +78,14 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1728377605054</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="Justering av skriftstørrelse, la til overgang til nye tilstander etter tidsavbrudd">
+      <option name="closed" value="true" />
+      <created>1728379153574</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1728379153574</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -85,6 +95,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Oppdaterte varighet av nedtelling i henhold til spesifikasjon" />
-    <option name="LAST_COMMIT_MESSAGE" value="Oppdaterte varighet av nedtelling i henhold til spesifikasjon" />
+    <MESSAGE value="Justering av skriftstørrelse, la til overgang til nye tilstander etter tidsavbrudd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Justering av skriftstørrelse, la til overgang til nye tilstander etter tidsavbrudd" />
   </component>
 </project>
