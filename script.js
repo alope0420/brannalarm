@@ -7,6 +7,7 @@ const tilstandsdefinisjoner= {
     UTLØST: {
         led: 'red',
         button: 'red',
+        nedtelling: 120,
         tekst: 'Røykvarsler utløst<br>' +
             'Alarm til brannsentral om <span id="nedtelling"></span><br>' +
             'Trykk på knappen for å avbryte',
@@ -14,6 +15,7 @@ const tilstandsdefinisjoner= {
     SLUMRET: {
         led: 'yellow',
         button: 'yellow',
+        nedtelling: 300,
         tekst: 'Vennligst luft ut<br>' +
             'Trykk så på knappen for å reaktivere<br>' +
             'Alarm reaktiveres om <span id="nedtelling"></span>',
@@ -27,7 +29,7 @@ const tilstandsdefinisjoner= {
     NULLSTILT: {
         led: 'green',
         button: 'green',
-        tekst: 'Røyken er luftet ut<br>' +
+        tekst: 'Ingen røyk registrert<br>' +
             'Alarm avbrutt <img id="hakemerke" src="assets/checkmark.gif" alt="">',
     },
 
@@ -48,15 +50,18 @@ function settTilstand(tilstand) {
     $('#display').html(definisjon.tekst);
 
     clearTimeout(nedtelling);
-    let sekunder = nedtellingsekunder;
-    const oppdaterDisplay = () => {
-        $('#nedtelling').text(
-            Math.floor(sekunder / 60) + ':' +
-            ('' + Math.floor(sekunder % 60)).padStart(2, '0'));
-        --sekunder;
+
+    if (definisjon.nedtelling) {
+        let sekunder = definisjon.nedtelling;
+        const oppdaterDisplay = () => {
+            $('#nedtelling').text(
+                Math.floor(sekunder / 60) + ':' +
+                ('' + Math.floor(sekunder % 60)).padStart(2, '0'));
+            --sekunder;
+        }
+        nedtelling = setInterval(oppdaterDisplay, 1000);
+        oppdaterDisplay();
     }
-    nedtelling = setInterval(oppdaterDisplay, 1000);
-    oppdaterDisplay();
 }
 
 function trykkKnapp() {
