@@ -8,11 +8,12 @@
     <style>
         * {
             margin: 0;
-            --scale-factor: 0.25;
+            --scale-factor: 0.6;
+            --font-size: calc(65px * var(--scale-factor));
         }
         @font-face {
-            font-family: 'advpixel'; /*a name to be used later*/
-            src: url('assets/advanced_pixel-7.ttf'); /*URL to font*/
+            font-family: 'advpixel';
+            src: url('assets/advanced_pixel-7.ttf');
         }
         img {
             position: absolute;
@@ -25,11 +26,10 @@
             height: calc(265px * var(--scale-factor));
             margin-left: calc(635px * var(--scale-factor));
             margin-top: calc(230px * var(--scale-factor));
-            /*outline: solid red;*/
-            /*line-height: calc(130px * var(--scale-factor));*/
             opacity: 1;
             color: white;
-            font-size: calc(75px * var(--scale-factor));
+            font-size: var(--font-size);
+            line-height: var(--font-size);
             font-family: advpixel, sans-serif;
         }
         #knapp {
@@ -44,8 +44,8 @@
             border: 0;
         }
         #hakemerke {
-            width: calc(75px * var(--scale-factor));
-            height: calc(75px * var(--scale-factor));
+            width: var(--font-size);
+            height: var(--font-size);
         }
     </style>
 </head>
@@ -53,10 +53,7 @@
 <img id="boks-bilde" src="assets/background_v2.png" alt="">
 <img id="knapp-bilde" src="assets/button_off.png" alt="">
 <img id="led-bilde" src="assets/LED_green.png" alt="">
-<div id="display">
-    Å nei, alt brenner ned<br>
-    Her er linje to
-</div>
+<div id="display"></div>
 <button id="knapp" onclick="trykkKnapp()">
 </button>
 </body>

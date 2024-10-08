@@ -2,12 +2,13 @@ const tilstandsdefinisjoner= {
     OK: {
         led: 'green',
         button: 'off',
-        tekst: 'Status for røykvarsler: OK',
+        tekst: 'Status for røykvarsler: OK<br>Linje 2<br>Linje 3<br>Linje 4',
     },
     UTLØST: {
         led: 'red',
         button: 'red',
         nedtelling: 120,
+        tilstandEtterNedtelling: 'TILKALT',
         tekst: 'Røykvarsler utløst<br>' +
             'Alarm til brannsentral om <span id="nedtelling"></span><br>' +
             'Trykk på knappen for å avbryte',
@@ -16,6 +17,7 @@ const tilstandsdefinisjoner= {
         led: 'yellow',
         button: 'yellow',
         nedtelling: 300,
+        tilstandEtterNedtelling: 'TILKALT',
         tekst: 'Vennligst luft ut<br>' +
             'Trykk så på knappen for å reaktivere<br>' +
             'Alarm reaktiveres om <span id="nedtelling"></span>',
@@ -29,6 +31,8 @@ const tilstandsdefinisjoner= {
     NULLSTILT: {
         led: 'green',
         button: 'green',
+        nedtelling: 5,
+        tilstandEtterNedtelling: 'OK',
         tekst: 'Ingen røyk registrert<br>' +
             'Alarm avbrutt <img id="hakemerke" src="assets/checkmark.gif" alt="">',
     },
@@ -36,12 +40,14 @@ const tilstandsdefinisjoner= {
 }
 
 let nåværendeTilstand = 'OK';
-const utløsAlarmEtter = 1;  // i sekunder
+const utløsAlarmEtter = 5;  // i sekunder
 const nedtellingsekunder = 300;
 
 let nedtelling;
 
 function settTilstand(tilstand) {
+
+    //console.log(`Tilstand endret til ${tilstand} etter)
 
     nåværendeTilstand = tilstand;
     const definisjon = tilstandsdefinisjoner[tilstand];
@@ -58,6 +64,10 @@ function settTilstand(tilstand) {
                 Math.floor(sekunder / 60) + ':' +
                 ('' + Math.floor(sekunder % 60)).padStart(2, '0'));
             --sekunder;
+            if (!sekunder) {
+                clearTimeout(nedtelling);
+                settTilstand(definisjon.tilstandEtterNedtelling);
+            }
         }
         nedtelling = setInterval(oppdaterDisplay, 1000);
         oppdaterDisplay();
@@ -85,6 +95,8 @@ function trykkKnapp() {
 
     }
 }
+
+const innlastingstid = Date.now();
 
 $(document).ready(() => {
     settTilstand('OK');
