@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="181b2ec7-b54a-449f-a0db-31f404ec746a" name="Changes" comment="La til lyd for knappeklikk, endret noen variabelnavn">
+    <list default="true" id="181b2ec7-b54a-449f-a0db-31f404ec746a" name="Changes" comment="Små endringer i loggføring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
@@ -23,6 +23,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/index.html" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/script.js" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 1
@@ -59,7 +64,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1728370890888</updated>
-      <workItem from="1728370891947" duration="12945000" />
+      <workItem from="1728370891947" duration="15549000" />
     </task>
     <task id="LOCAL−00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -96,7 +101,14 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1728383390895</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="Små endringer i loggføring">
+      <option name="closed" value="true" />
+      <created>1728387248300</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1728387248300</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +121,7 @@
     <MESSAGE value="Justering av skriftstørrelse, la til overgang til nye tilstander etter tidsavbrudd" />
     <MESSAGE value="La til lyd og blinkende knapper" />
     <MESSAGE value="La til lyd for knappeklikk, endret noen variabelnavn" />
-    <option name="LAST_COMMIT_MESSAGE" value="La til lyd for knappeklikk, endret noen variabelnavn" />
+    <MESSAGE value="Små endringer i loggføring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Små endringer i loggføring" />
   </component>
 </project>

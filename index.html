@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Brannalarm prototype</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="script.js"></script>
     <style>
         * {
             margin: 0;
-            --scale-factor: 0.6;
+            --scale-factor: 0.6; /* Endre her for å tilpasse til ulike skjermstørrelser */
             --font-size: calc(65px * var(--scale-factor));
         }
         @font-face {
@@ -26,11 +26,11 @@
             height: calc(265px * var(--scale-factor));
             margin-left: calc(635px * var(--scale-factor));
             margin-top: calc(230px * var(--scale-factor));
-            opacity: 1;
+
             color: white;
+            font-family: advpixel, sans-serif;
             font-size: var(--font-size);
             line-height: var(--font-size);
-            font-family: advpixel, sans-serif;
         }
         #knapp {
             position: absolute;
@@ -38,10 +38,13 @@
             height: calc(255px * var(--scale-factor));
             margin-left: calc(1070px * var(--scale-factor));
             margin-top: calc(695px * var(--scale-factor));
-            opacity: 0.5;
-            color: white;
-            border-radius: 50%;
+
+            border-radius: 100%;
             border: 0;
+            background: unset; /* Fjern standard hover-effekt i Firefox */
+        }
+        #knapp:active:hover {
+            box-shadow: 0 0 0 100vmax inset rgb(0 0 0 / 20%);
         }
         #hakemerke {
             width: var(--font-size);
@@ -50,14 +53,15 @@
     </style>
 </head>
 <body>
+
 <img id="boks-bilde" src="assets/background_v2.png" alt="">
 <img id="knapp-bilde" src="assets/button_off.png" alt="">
 <img id="led-bilde" src="assets/LED_green.png" alt="">
 <div id="display"></div>
 <button id="knapp" onclick="trykkKnapp()"
         onmousedown="document.getElementById('lyd-knapp-ned').play()"
-        onmouseup="document.getElementById('lyd-knapp-opp').play()"
-></button>
+        onmouseup="document.getElementById('lyd-knapp-opp').play()">
+</button>
 
 <audio src="" id="lyd" hidden></audio>
 <audio src="audio/button_click.wav" id="lyd-knapp-ned" hidden></audio>

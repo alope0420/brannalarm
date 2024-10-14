@@ -1,62 +1,65 @@
-const tilstander= {
+const tilstander = {
     OK: {
         led: 'green',
-        button: 'off',
-        tekst: 'Status for røykvarsler: OK',
+        knapp: 'off',
+        tekst:
+            'Status for røykvarsler: OK',
     },
     UTLØST: {
         led: 'red',
-        button: 'red',
+        knapp: 'red',
         blinkende: true,
         lyd: '1_advarsel_loop.wav',
         gjentaLyd: true,
         nedtelling: 120,
         tilstandEtterNedtelling: 'TILKALT',
-        tekst: 'Røykvarsler utløst<br>' +
+        tekst:
+            'Røykvarsler utløst<br>' +
             'Alarm til brannsentral om <span id="nedtelling"></span><br>' +
             'Trykk på knappen for å avbryte',
     },
     SLUMRET: {
         led: 'yellow',
-        button: 'yellow',
+        knapp: 'yellow',
         blinkende: true,
         lyd: '2_alarm_kvittert_loop.wav',
         gjentaLyd: true,
         nedtelling: 300,
         tilstandEtterNedtelling: 'TILKALT',
-        tekst: 'Vennligst luft ut<br>' +
+        tekst:
+            'Vennligst luft ut<br>' +
             'Trykk så på knappen for å reaktivere<br>' +
             'Alarm reaktiveres om <span id="nedtelling"></span>',
     },
     TILKALT: {
         led: 'red',
-        button: 'off',
+        knapp: 'off',
         lyd: '4_utløpt_tid_loop.wav',
         gjentaLyd: true,
-        tekst: 'Varsel er sendt til brannsentral<br>' +
+        tekst:
+            'Varsel er sendt til brannsentral<br>' +
             'Venter på utrykning',
     },
     NULLSTILT: {
         led: 'green',
-        button: 'green',
+        knapp: 'green',
         lyd: '5_røyken_er_borte.wav',
         nedtelling: 7,
         tilstandEtterNedtelling: 'OK',
-        tekst: 'Ingen røyk registrert<br>' +
+        tekst:
+            'Ingen røyk registrert<br>' +
             'Alarm avbrutt <img id="hakemerke" src="assets/checkmark.gif" alt="">',
     },
 
 }
 
-let nåværendeTilstand = 'OK';
 const utløsAlarmEtter = 5;  // i sekunder
 const blinkHastighet = 750; // i millisekunder
-const innlastingstid = Date.now();
+
+let nåværendeTilstand;
 let forrigeTid = Date.now();
 let nedtelling;
-
 let blinkIntervall;
-
 
 function settTilstand(nyTilstand) {
 
@@ -69,7 +72,7 @@ function settTilstand(nyTilstand) {
     let alternativ = false;
     const byttGrafikk = () => {
         if (!alternativ) {
-            $('#knapp-bilde').attr('src', `assets/button_${tilstand.button}.png`);
+            $('#knapp-bilde').attr('src', `assets/button_${tilstand.knapp}.png`);
             $('#led-bilde').attr('src', `assets/LED_${tilstand.led}.png`);
         } else {
             $('#knapp-bilde').attr('src', `assets/button_off.png`);
@@ -102,7 +105,7 @@ function settTilstand(nyTilstand) {
             }
             $('#nedtelling').text(
                 Math.floor(sekunder / 60) + ':' +
-                ('' + Math.floor(sekunder % 60)).padStart(2, '0'));
+                (sekunder % 60).toString().padStart(2, '0'));
             --sekunder;
         }
         nedtelling = setInterval(oppdaterDisplay, 1000);
@@ -114,11 +117,10 @@ function trykkKnapp() {
     console.log('Nåværende tilstand: ' + nåværendeTilstand + '. Bruker trykket på knappen.');
     switch (nåværendeTilstand) {
         case 'OK': {
+            // Dette er ikke en del av den faktiske funksjonaliteten, men bare en lettvint måte
+            // å starte brukertesten på. Alarmen går 5 sekunder etter at knappen er trykket.
             clearTimeout(nedtelling);
-            nedtelling = setTimeout(() => {
-                settTilstand('UTLØST');
-                $('audio')[0].play();
-            }, utløsAlarmEtter * 1000);
+            nedtelling = setTimeout(() => settTilstand('UTLØST'), utløsAlarmEtter * 1000);
             break;
         }
         case 'UTLØST': {
