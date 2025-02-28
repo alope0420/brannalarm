@@ -69,6 +69,8 @@ function settTilstand(nyTilstand) {
     nåværendeTilstand = nyTilstand;
     const tilstand = tilstander[nyTilstand];
 
+    // Logikk for blinkende knapp og LED-lys, for de tilstandene som har dette.
+    // Variabelen alternativ holder styr på om elementene skal blinke av eller på, og toggles fortløpende.
     let alternativ = false;
     const byttGrafikk = () => {
         if (!alternativ) {
@@ -80,13 +82,21 @@ function settTilstand(nyTilstand) {
         }
         alternativ = !alternativ;
     }
+
+    // Stopp eventuell blinking fra forrige tilstand.
     clearInterval(blinkIntervall);
+
+    // Hvis gjeldende tilstand skal være blinkende, kaller vi byttGrafikk() kontinuerlig.
     if (tilstand.blinkende) {
         blinkIntervall = setInterval(byttGrafikk, blinkHastighet);
     }
+
+    // Uavhengig av om vi er i en blinkende tilstand, kaller vi byttGrafikk() én gang for å
+    // oppdatere til riktig grafikk for tilstanden vi bytter til.
     byttGrafikk();
     $('#display').html(tilstand.tekst);
 
+    // Spill av riktig lyd for tilstanden gjennom statisk lydelement på siden.
     $('#lyd').attr('src', `audio/${tilstand.lyd}`);
     if (tilstand.gjentaLyd)
         $('#lyd').prop('loop', true);
@@ -94,18 +104,21 @@ function settTilstand(nyTilstand) {
         $('#lyd').removeProp('loop');
     $('#lyd')[0].play();
 
+    // Stopp eventuell nedtelling fra forrige tilstand.
     clearInterval(nedtelling);
 
+    // Hvis tilstanden skal inneholde en nedtelling i displayet, lager vi et intervall som endrer teksten
+    // på riktig sted i displayet fortløpende. Forutsetter at teksten inneholder en span med ID-en "nedtelling".
     if (tilstand.nedtelling) {
         let sekunder = tilstand.nedtelling;
         const oppdaterDisplay = () => {
             if (sekunder < 0) {
-                clearInterval(nedtelling);
+                clearInterval(nedtelling); // Egentlig overflødig siden settTilstand uansett stopper nedtellingen
                 settTilstand(tilstand.tilstandEtterNedtelling);
             }
             $('#nedtelling').text(
                 Math.floor(sekunder / 60) + ':' +
-                (sekunder % 60).toString().padStart(2, '0'));
+                (sekunder % 60).toString().padStart(2, '0')); // Formater gjenstående tid på formen m:ss
             --sekunder;
         }
         nedtelling = setInterval(oppdaterDisplay, 1000);
